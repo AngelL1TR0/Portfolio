@@ -1,6 +1,62 @@
 @MyApp_HostAddress = http://localhost:5290
 
+# Get API information
+GET {{MyApp_HostAddress}}/
+Accept: application/json
+
+###
+
+# Get weather forecast
 GET {{MyApp_HostAddress}}/weatherforecast/
 Accept: application/json
+
+###
+
+# Get all users
+GET {{MyApp_HostAddress}}/users
+Accept: application/json
+
+###
+
+# Get user by ID
+GET {{MyApp_HostAddress}}/users/1
+Accept: application/json
+
+###
+
+# Create a new user
+POST {{MyApp_HostAddress}}/users
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "isActive": true
+}
+
+###
+
+# Get all posts
+GET {{MyApp_HostAddress}}/posts
+Accept: application/json
+
+###
+
+# Get post by ID
+GET {{MyApp_HostAddress}}/posts/1
+Accept: application/json
+
+###
+
+# Create a new post
+POST {{MyApp_HostAddress}}/posts
+Content-Type: application/json
+
+{
+  "title": "My New Post",
+  "content": "This is the content of my new post. It can be as long as needed!",
+  "userId": 1,
+  "isPublished": true
+}
 
 ###

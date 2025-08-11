@@ -1,0 +1,18 @@
+<header style="background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%); color: #fff; padding: 0;">
+  <nav style="display: flex; justify-content: space-between; align-items: center; max-width: 1100px; margin: 0 auto; padding: 1.2rem 2rem;">
+    <div style="font-size: 1.7rem; font-weight: bold; letter-spacing: 2px;">MyPortfolio</div>
+    <div style="display: flex; gap: 2rem;">
+  <a routerLink="/sobre-mi" routerLinkActive="active" style="color: #fff; text-decoration: none; font-weight: 500; transition: color 0.2s;">Sobre mí</a>
+  <a routerLink="/proyectos" routerLinkActive="active" style="color: #fff; text-decoration: none; font-weight: 500; transition: color 0.2s;">Proyectos</a>
+  <a routerLink="/contacto" routerLinkActive="active" style="color: #fff; text-decoration: none; font-weight: 500; transition: color 0.2s;">Contacto</a>
+    </div>
+  </nav>
+</header>
+<main style="padding: 2.5rem 1rem 2rem 1rem; min-height: 80vh; background: #f4f7fa;">
+  <div style="max-width: 900px; margin: 0 auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 24px rgba(80,80,120,0.08); padding: 2.5rem 2rem;">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+<footer style="background: #222; color: #fff; text-align: center; padding: 1.2rem 0; font-size: 1rem; letter-spacing: 1px;">
+  © 2025 MyPortfolio. Todos los derechos reservados.
+</footer>

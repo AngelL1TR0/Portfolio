@@ -1,0 +1,35 @@
+
+body {
+	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+	background: #f4f7fa;
+	margin: 0;
+	color: #222;
+}
+
+a {
+	transition: color 0.2s;
+}
+a:hover {
+	color: #6a11cb;
+}
+
+h1, h2, h3 {
+	font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+	font-weight: 700;
+	color: #222;
+}
+
+input, textarea {
+	font-family: inherit;
+	font-size: 1rem;
+}
+
+@media (max-width: 700px) {
+	main > div {
+		padding: 1rem !important;
+	}
+	section {
+		flex-direction: column !important;
+		align-items: flex-start !important;
+	}
+}

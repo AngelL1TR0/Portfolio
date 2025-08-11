@@ -1,0 +1,10 @@
+<section style="display: flex; flex-wrap: wrap; align-items: center; gap: 2.5rem;">
+	<img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto de perfil" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 12px rgba(80,80,120,0.10);">
+	<div *ngIf="user">
+		<h2 style="font-size: 2.2rem; margin-bottom: 0.5rem;">¡Hola! Soy <span style="color: #2575fc;">{{ user.name }}</span></h2>
+		<p style="font-size: 1.1rem; color: #444; max-width: 500px;">Desarrollador web apasionado por crear soluciones digitales modernas y funcionales. Me especializo en Angular, .NET y bases de datos. ¡Bienvenido a mi portfolio!</p>
+		<div style="margin-top: 1.2rem;">
+			<a [href]="'mailto:' + user.email" style="background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%); color: #fff; padding: 0.7rem 1.5rem; border-radius: 30px; text-decoration: none; font-weight: 500; box-shadow: 0 2px 8px rgba(80,80,120,0.10);">Contáctame</a>
+		</div>
+	</div>
+</section>
