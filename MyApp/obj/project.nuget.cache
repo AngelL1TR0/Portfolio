@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "FpmuN/xSn3k=",
+  "success": true,
+  "projectFilePath": "/home/angelsj4/Documentos/Proyectos/MyApp/MyApp.csproj",
+  "expectedPackageFiles": [
+    "/home/angelsj4/.nuget/packages/microsoft.aspnetcore.openapi/9.0.7/microsoft.aspnetcore.openapi.9.0.7.nupkg.sha512",
+    "/home/angelsj4/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512",
+    "/home/angelsj4/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.7/microsoft.aspnetcore.app.ref.9.0.7.nupkg.sha512"
+  ],
+  "logs": []
+}
