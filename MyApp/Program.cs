@@ -3,6 +3,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
@@ -10,9 +12,26 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
+
+// Add a root endpoint
+app.MapGet("/", () => new { 
+    Message = "Welcome to MyApp API!", 
+    Version = "1.0.0",
+    Endpoints = new[] {
+        "/weatherforecast - Get weather forecast",
+        "/swagger - API documentation",
+        "/openapi/v1.json - OpenAPI specification"
+    }
+})
+.WithName("GetRoot")
+.WithSummary("API Information")
+.WithDescription("Get basic information about the API and available endpoints")
+.ExcludeFromDescription();
 
 var summaries = new[]
 {
@@ -31,7 +50,10 @@ app.MapGet("/weatherforecast", () =>
         .ToArray();
     return forecast;
 })
-.WithName("GetWeatherForecast");
+.WithName("GetWeatherForecast")
+.WithSummary("Get weather forecast")
+.WithDescription("Retrieves a 5-day weather forecast with random data")
+.Produces<WeatherForecast[]>(StatusCodes.Status200OK);
 
 app.Run();
 
