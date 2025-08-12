@@ -1,10 +1,34 @@
-<section>
-	<h2 style="font-size: 2rem; margin-bottom: 2rem;">Proyectos</h2>
-	<div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: flex-start;">
-		<div *ngFor="let project of projects" style="background: #f4f7fa; border-radius: 14px; box-shadow: 0 2px 12px rgba(80,80,120,0.08); padding: 1.5rem; width: 270px; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: 1px solid #e0e6ed;">
-			<h3 style="margin-top: 0; color: #2575fc;">{{ project.title }}</h3>
-			<p style="color: #444;">{{ project.content }}</p>
-			<a *ngIf="project.url" [href]="project.url" target="_blank" style="color: #6a11cb; text-decoration: underline;">Ver más</a>
-		</div>
-	</div>
-</section>
+
+<div class="container">
+  <h1>Mis Proyectos</h1>
+
+  <div *ngIf="projects$ | async as projects; else loadingOrError">
+    <div *ngIf="projects.length > 0; else noProjects" class="card-container">
+      <mat-card *ngFor="let project of projects" class="project-card">
+        <mat-card-header>
+          <mat-card-title>{{ project.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ project.content }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <a mat-button color="primary" *ngIf="project.url" [href]="project.url" target="_blank">Ver más</a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <ng-template #noProjects>
+      <p>No hay proyectos para mostrar en este momento.</p>
+    </ng-template>
+  </div>
+
+  <ng-template #loadingOrError>
+    <div *ngIf="error; else loading" class="error-message">
+      <p>{{ error }}</p>
+    </div>
+    <ng-template #loading>
+      <div class="spinner-container">
+        <mat-spinner></mat-spinner>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>

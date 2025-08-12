@@ -1,19 +1,40 @@
+
 import { Component, OnInit } from '@angular/core';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { Observable, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { PortfolioService, Project } from '../../portfolio.service';
-import { NgFor, NgIf } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-projects',
-  imports: [NgFor, NgIf],
+  standalone: true,
+  imports: [
+    NgIf,
+    NgFor,
+    AsyncPipe,
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatButtonModule
+  ],
   templateUrl: './projects.html',
-  styleUrl: './projects.scss'
+  styleUrls: ['./projects.scss']
 })
 export class Projects implements OnInit {
-  projects: Project[] = [];
+  projects$!: Observable<Project[]>;
+  error: string | null = null;
 
-  constructor(private portfolio: PortfolioService) {}
+  constructor(private portfolioService: PortfolioService) {}
 
   ngOnInit() {
-    this.portfolio.getProjects().subscribe(projects => this.projects = projects);
+    this.projects$ = this.portfolioService.getProjects().pipe(
+      catchError(err => {
+        this.error = 'No se pudieron cargar los proyectos. Inténtalo de nuevo más tarde.';
+        console.error(err);
+        return of([]);
+      })
+    );
   }
 }

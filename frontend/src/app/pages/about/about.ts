@@ -1,19 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { PortfolioService, User } from '../../portfolio.service';
-import { NgIf } from '@angular/common';
+import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-about',
-  imports: [NgIf],
+  standalone: true,
+  imports: [MatCardModule, MatIconModule, MatButtonModule],
   templateUrl: './about.html',
-  styleUrl: './about.scss'
+  styleUrls: ['./about.scss']
 })
-export class About implements OnInit {
-  user?: User;
-
-  constructor(private portfolio: PortfolioService) {}
-
-  ngOnInit() {
-    this.portfolio.getUser().subscribe(user => this.user = user);
-  }
-}
+export class About {}

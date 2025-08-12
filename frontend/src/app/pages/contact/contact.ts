@@ -1,20 +1,14 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-contact',
-  imports: [FormsModule],
+  standalone: true,
+  imports: [MatCardModule, MatFormFieldModule, MatInputModule, MatButtonModule],
   templateUrl: './contact.html',
-  styleUrl: './contact.scss'
+  styleUrls: ['./contact.scss']
 })
-export class Contact {
-  name = '';
-  email = '';
-  message = '';
-
-  sendEmail() {
-    const subject = encodeURIComponent('Contacto desde portfolio');
-    const body = encodeURIComponent(`Nombre: ${this.name}\nEmail: ${this.email}\nMensaje: ${this.message}`);
-    window.location.href = `mailto:angel@portfolio.com?subject=${subject}&body=${body}`;
-  }
-}
+export class Contact {}

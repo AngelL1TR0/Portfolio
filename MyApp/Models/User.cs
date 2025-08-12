@@ -20,6 +20,6 @@ namespace MyApp.Models
         public bool IsActive { get; set; } = true;
         
         // Navigation property
-        public virtual ICollection<Post> Posts { get; set; } = new List<Post>();
+        public virtual ICollection<Project> Projects { get; set; } = new List<Project>();
     }
 }

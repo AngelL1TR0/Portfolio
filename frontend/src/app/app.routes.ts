@@ -1,4 +1,3 @@
-
 import { Routes } from '@angular/router';
 import { About } from './pages/about/about';
 import { Projects } from './pages/projects/projects';
