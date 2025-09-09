@@ -1,12 +1,64 @@
-# React + Vite
+# Portfolio Personal con React y Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido a mi portfolio personal! Este proyecto ha sido creado con mucho cariño para mostrar mis habilidades y proyectos como desarrollador de software.
 
-Currently, two official plugins are available:
+## 🚀 Demo en Vivo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[¡Visita mi portfolio aquí!](https://your-live-demo-url.com)
 
-## Expanding the ESLint configuration
+## ✨ Características
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+*   **Diseño Moderno y Responsivo:** Una interfaz limpia y adaptable a cualquier dispositivo.
+*   **Componentes Reutilizables:** Construido con componentes de React para un mantenimiento sencillo.
+*   **Secciones Clave:**
+    *   **Sobre Mí:** Una breve introducción sobre quién soy y mis pasiones.
+    *   **Proyectos:** Una galería de mis trabajos más destacados con descripciones y enlaces.
+    *   **Contacto:** Un formulario para que puedas ponerte en contacto conmigo.
+*   **Optimizado para el Rendimiento:** Gracias a Vite, la carga y la navegación son súper rápidas.
+
+## 🛠️ Tecnologías Utilizadas
+
+*   **[React](https://reactjs.org/)**: Biblioteca para construir interfaces de usuario.
+*   **[Vite](https://vitejs.dev/)**: Herramienta de frontend para un desarrollo rápido.
+*   **[ESLint](https://eslint.org/)**: Para mantener un código limpio y consistente.
+*   **CSS Modules**: Para estilos encapsulados por componente.
+
+## ⚙️ Instalación y Setup
+
+¿Quieres ejecutar este proyecto en tu máquina local? ¡Sigue estos pasos!
+
+1.  **Clona el repositorio:**
+    ```bash
+    git clone https://github.com/your-username/your-repository.git
+    ```
+2.  **Navega al directorio del proyecto:**
+    ```bash
+    cd portfolio-react
+    ```
+3.  **Instala las dependencias:**
+    ```bash
+    npm install
+    ```
+4.  **Inicia el servidor de desarrollo:**
+    ```bash
+    npm run dev
+    ```
+5.  **¡Abre tu navegador!**
+    La aplicación estará disponible en `http://localhost:5173`.
+
+## 📸 Screenshots
+
+| Escritorio                                     | Móvil                                     |
+| ---------------------------------------------- | ----------------------------------------- |
+| ![Screenshot de Escritorio](URL_DEL_SCREENSHOT) | ![Screenshot de Móvil](URL_DEL_SCREENSHOT) |
+
+## 📫 Contacto
+
+¿Interesado en colaborar o simplemente quieres saludar? ¡No dudes en contactarme!
+
+*   **Email:** [tu-email@ejemplo.com](mailto:tu-email@ejemplo.com)
+*   **LinkedIn:** [tu-perfil-de-linkedin](https://www.linkedin.com/in/tu-perfil/)
+
+---
+
+*Este README fue generado con la ayuda de Gemini.*
