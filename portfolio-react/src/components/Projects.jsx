@@ -1,57 +1,55 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import { motion } from 'framer-motion';
+import { portfolioData } from '../data/portfolioData';
 
 function Projects() {
-  const projects = [
-    {
-      id: 1,
-      name: 'Proyecto 1',
-      description: 'Una descripción breve del Proyecto 1. Fue un proyecto interesante donde aprendí mucho.',
-      link: '#',
-      img: 'https://via.placeholder.com/300x200'
-    },
-    {
-      id: 2,
-      name: 'Proyecto 2',
-      description: 'Una descripción breve del Proyecto 2. Este proyecto me permitió aplicar mis habilidades en X y Y.',
-      link: '#',
-      img: 'https://via.placeholder.com/300x200'
-    },
-    {
-      id: 3,
-      name: 'Proyecto 3',
-      description: 'Una descripción breve del Proyecto 3. Un desafío divertido que resolví con Z.',
-      link: '#',
-      img: 'https://via.placeholder.com/300x200'
-    },
-  ];
-
-  const cardVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: i => ({
-      opacity: 1,
-      scale: 1,
-      transition: {
-        delay: i * 0.2,
-      },
-    }),
-  };
+  const { projects } = portfolioData;
 
   return (
-    <section id="projects" className="section bg-light">
+    <section id="projects" className="section">
       <Container>
-        <h2>Mis Proyectos</h2>
-        <Row>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="mono accent-text mb-2 text-center">// portfolio.projects</div>
+          <h2>Proyectos Destacados</h2>
+        </motion.div>
+
+        <Row className="g-4 mt-2">
           {projects.map((project, i) => (
-            <Col key={project.id} xs={12} md={4} className="mb-4">
-              <motion.div custom={i} initial="hidden" animate="visible" variants={cardVariants}>
-                <Card>
-                  <Card.Img variant="top" src={project.img} />
-                  <Card.Body>
-                    <Card.Title>{project.name}</Card.Title>
-                    <Card.Text>{project.description}</Card.Text>
-                    <Button variant="primary" href={project.link} target="_blank" rel="noopener noreferrer">Ver Proyecto</Button>
+            <Col key={project.id} xs={12} lg={4}>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.2 }}
+              >
+                <Card className="cyber-card h-100 border-0 p-4">
+                  <Card.Body className="d-flex flex-column p-0">
+                    <div className="d-flex justify-content-between align-items-center mb-3">
+                      <div className="accent-text fs-3">0{i + 1}</div>
+                      <div className="text-secondary mono small">_stable_v1.0</div>
+                    </div>
+                    <Card.Title className="fw-bold mb-3 fs-4 text-white mono">{project.name}</Card.Title>
+                    <Card.Text className="text-secondary mb-4 flex-grow-1">
+                      {project.description}
+                    </Card.Text>
+                    <div className="d-flex flex-wrap gap-2 mb-4">
+                      {project.tags.map(tag => (
+                        <span key={tag} className="px-2 py-1 rounded bg-secondary bg-opacity-10 text-info smaller mono" style={{ fontSize: '0.75rem' }}>
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <a href={project.link} className="text-decoration-none">
+                      <button className="btn-cyber w-100 py-2" style={{ fontSize: '0.8rem' }}>
+                        Explorar Fuente
+                      </button>
+                    </a>
                   </Card.Body>
                 </Card>
               </motion.div>
@@ -64,4 +62,3 @@ function Projects() {
 }
 
 export default Projects;
-
