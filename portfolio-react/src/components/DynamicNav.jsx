@@ -19,8 +19,17 @@ const DynamicNav = () => {
         <motion.nav
             className={`nav-dock ${hidden ? 'nav-hidden' : ''}`}
             initial={{ y: -100, x: '-50%', opacity: 0 }}
-            animate={{ y: 0, x: '-50%', opacity: 1 }}
-            transition={{ delay: 0.5, type: 'spring', stiffness: 100, damping: 20 }}
+            animate={{
+                y: hidden ? -100 : 0,
+                x: '-50%',
+                opacity: hidden ? 0 : 1
+            }}
+            transition={{
+                type: 'spring',
+                stiffness: 260,
+                damping: 20,
+                opacity: { duration: 0.2 }
+            }}
         >
             {portfolioData.navigation.map((item, i) => (
                 <motion.a

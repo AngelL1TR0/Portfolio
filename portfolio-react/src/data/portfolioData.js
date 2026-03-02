@@ -9,7 +9,7 @@ export const portfolioData = {
         },
         aboutShort: "> Diseñando el futuro a través de código limpio y experiencias interactivas.",
         cvLink: "#",
-        skills: ["React", "Angular", "TypeScript", "C#", ".Net", "Java", "Python", "Clean Code"],
+        skills: ["React", "Angular", "TypeScript", "C#", ".Net", "Java", "Python", "Clean Code", "IA", "Vibe Coding"],
         softSkills: ["Arquitectura Limpia", "Resolución de Problemas", "Trabajo en Equipo", "Adaptabilidad"],
     },
 
@@ -22,10 +22,10 @@ export const portfolioData = {
 
     education: [
         {
-            degree: "Grado en Ingeniería Informática",
-            institution: "Universidad de Castilla-La Mancha",
-            period: "2019 - 2023",
-            details: "Especialización en Ingeniería del Software."
+            degree: "Desarrollo de aplicaciones multiplataforma",
+            institution: "I.E.S. Federica Montseny",
+            period: "2021 - 2023",
+            details: "Especialización en desarrollo de aplicaciones."
         }
     ],
 
@@ -41,28 +41,40 @@ export const portfolioData = {
 
     experience: [
         {
-            company: "OriginPath",
+            company: "OriginPath Group",
             role: "Full Stack Developer",
-            period: "2023 - Jun 2024",
+            period: "Sep 2023 - Jun 2024",
             location: {
-                label: "Leganés, España",
+                label: "Leganés, Madrid (España)",
                 lat: 40.3281,
                 lon: -3.7636
             },
-            description: "Desarrollo de aplicaciones empresariales escalables usando .NET Core y Angular.",
+            description: "Arquitectura y desarrollo de soluciones Enterprise a medida. Implementación de microservicios robustos y sistemas escalables bajo estándares de Arquitectura Limpia y excelencia técnica.",
             secrets: ["Microservicios", "Azure DevOps", "Arquitectura Limpia"]
         },
         {
-            company: "Freelance",
-            role: "Web Developer",
-            period: "2022 - 2023",
+            company: "Malthus Darwin",
+            role: "Full Stack Developer",
+            period: "Sep 2024 - Dic 2025",
             location: {
-                label: "Remoto (España)",
-                lat: 38.9861,
-                lon: -3.9272
+                label: "Getafe, Madrid (España)",
+                lat: 40.3167,
+                lon: -3.7333
             },
-            description: "Creación de soluciones personalizadas para clientes internacionales.",
-            secrets: ["SEO Optimization", "React Native", "Firebase"]
+            description: "Ingeniería de software para gigantes del sector aeroespacial (T-SYSTEMS y AIRBUS). Liderazgo en migraciones críticas de sistemas legados y despliegue de protocolos de seguridad avanzados en entornos cloud-ready.",
+            secrets: ["SEO Optimization", "Angular", "PostgreSQL"]
+        },
+        {
+            company: "Sotec Consulting",
+            role: "Full Stack Developer",
+            period: "Ene 2026 - Actualidad",
+            location: {
+                label: "Arguelles, Madrid (España)",
+                lat: 40.4236,
+                lon: -3.7157
+            },
+            description: "Desarrollo de plataforma crítica de matriculación para la UNIVERSIDAD PONTIFICIA DE COMILLAS. Optimización de flujos transaccionales de alta disponibilidad para el sector universitario.",
+            secrets: ["SEO Optimization", "Angular", "SQL Server"]
         }
     ],
 
@@ -77,31 +89,30 @@ export const portfolioData = {
     projects: [
         {
             id: 1,
-            name: 'Vision.OS',
-            description: 'Plataforma de visualización de datos en tiempo real construida con React y WebGL.',
+            name: 'Portfolio React',
+            description: 'Portfolio React creado con React y Tailwind CSS.',
             link: '#',
-            tags: ['React', 'D3.js', 'WebGL']
+            tags: ['React', 'Tailwind CSS', 'TypeScript']
         },
         {
             id: 2,
-            name: 'Nexus DB',
-            description: 'Sistema de base de datos distribuida con replicación automática e interfaz de administración.',
+            name: 'PetFind',
+            description: 'Aplicación movil dedicada a encontrar mascotas para pasear juntas.',
             link: '#',
-            tags: ['Node.js', 'GraphQL', 'K8s']
+            tags: ['Node.js', 'C#', 'PostgreSQL', 'TypeScript']
         },
         {
             id: 3,
-            name: 'Cyber Sentinel',
-            description: 'Dashboard de seguridad para monitorización de ataques y análisis de vulnerabilidades.',
+            name: 'TerminalResults',
+            description: 'Aplicación para mostrar resultados de futbol en la terminal como antigamente lo hacia el teletexto.',
             link: '#',
-            tags: ['Rust', 'Wasm', 'TypeScript']
+            tags: ['C#', 'WPF', 'MVVM', 'MVVM Light', 'Entity Framework', 'PostgreSQL']
         },
     ],
 
     socialLinks: [
-        { name: 'GitHub', url: '#', icon: '→' },
-        { name: 'LinkedIn', url: '#', icon: '→' },
-        { name: 'Twitter', url: '#', icon: '→' }
+        { name: 'GitHub', url: import.meta.env.VITE_GITHUB_URL || '#', icon: '→' },
+        { name: 'LinkedIn', url: import.meta.env.VITE_LINKEDIN_URL || '#', icon: '→' },
     ],
 
 };

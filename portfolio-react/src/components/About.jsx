@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
 import WorldMap from './WorldMap';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import ResumePDF from './ResumePDF';
 
 function About() {
   const { personalInfo, stats } = portfolioData;
+  const [cvLang, setCvLang] = useState('es');
 
   return (
     <section id="about" className="section overflow-hidden">
@@ -44,9 +47,41 @@ function About() {
               </Row>
 
               <div className="d-flex flex-column flex-lg-row gap-4 align-items-center justify-content-center justify-content-lg-start">
-                <a href={personalInfo.cvLink} className="text-decoration-none">
-                  <button className="btn-cyber">Descargar CV</button>
-                </a>
+                <div className="d-flex align-items-center gap-3">
+                  <div className="lang-selector p-1 bg-dark-soft border border-secondary rounded-pill d-flex gap-1" style={{ background: 'rgba(0, 0, 0, 0.3)', backdropFilter: 'blur(5px)' }}>
+                    {['es', 'en'].map(l => (
+                      <button
+                        key={l}
+                        onClick={() => setCvLang(l)}
+                        style={{
+                          background: cvLang === l ? '#00f2ff' : 'transparent',
+                          color: cvLang === l ? '#050a15' : '#8892b0',
+                          border: 'none',
+                          padding: '2px 8px',
+                          borderRadius: '15px',
+                          fontSize: '0.7rem',
+                          fontWeight: 'bold',
+                          cursor: 'pointer',
+                          transition: 'all 0.3s'
+                        }}
+                      >
+                        {l.toUpperCase()}
+                      </button>
+                    ))}
+                  </div>
+
+                  <PDFDownloadLink
+                    document={<ResumePDF lang={cvLang} />}
+                    fileName={`CV_Angel_Torija_${cvLang.toUpperCase()}.pdf`}
+                    className="text-decoration-none"
+                  >
+                    {({ loading }) => (
+                      <button className="btn-cyber" disabled={loading}>
+                        {loading ? '...' : `Descargar CV [${cvLang.toUpperCase()}]`}
+                      </button>
+                    )}
+                  </PDFDownloadLink>
+                </div>
                 <div className="d-flex align-items-center gap-2 text-secondary mono">
                   <span className="accent-text">•</span>
                   <WorldMap
