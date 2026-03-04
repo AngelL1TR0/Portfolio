@@ -1,64 +1,49 @@
-# Portfolio Personal con React y Vite
+# 🛰️ Angel Torija | Portfolio Tactical Console
 
-¡Bienvenido a mi portfolio personal! Este proyecto ha sido creado con mucho cariño para mostrar mis habilidades y proyectos como desarrollador de software.
+Este proyecto es un portfolio personal diseñado bajo una estética "Tactical Console" y "Master Hub". Se trata de una interfaz interactiva y de alto rendimiento que centraliza mi trayectoria profesional, proyectos y canales de contacto en una experiencia visual premium y técnica.
 
-## 🚀 Demo en Vivo
+## 🔗 Demo en Vivo
+Puedes acceder a la consola desplegada aquí:  
+👉 **[Acceder al Portfolio](https://AngelL1TR0.github.io/Portfolio)**
 
-[¡Visita mi portfolio aquí!](https://your-live-demo-url.com)
+## 🛠️ Tecnologías y Librerías
 
-## ✨ Características
+El núcleo tecnológico del proyecto se basa en un stack moderno para garantizar fluidez y reactividad:
 
-*   **Diseño Moderno y Responsivo:** Una interfaz limpia y adaptable a cualquier dispositivo.
-*   **Componentes Reutilizables:** Construido con componentes de React para un mantenimiento sencillo.
-*   **Secciones Clave:**
-    *   **Sobre Mí:** Una breve introducción sobre quién soy y mis pasiones.
-    *   **Proyectos:** Una galería de mis trabajos más destacados con descripciones y enlaces.
-    *   **Contacto:** Un formulario para que puedas ponerte en contacto conmigo.
-*   **Optimizado para el Rendimiento:** Gracias a Vite, la carga y la navegación son súper rápidas.
+*   **Framework**: [React 19](https://reactjs.org/) (Funcional y basado en Hooks)
+*   **Build Tool**: [Vite 7](https://vitejs.dev/) (Para carga ultra-rápida)
+*   **Estilos**: 
+    *   **Vanilla CSS**: Diseño a medida con Tactical Glassmorphism.
+    *   **Bootstrap 5**: Estructura de grid y componentes base.
+*   **Animaciones**: [Framer Motion 12](https://www.framer.com/motion/) (Micro-interacciones y transiciones suaves)
+*   **Mapas Tácticos**: [MapLibre GL](https://maplibre.org/)
+*   **Gestión de Email**: [@emailjs/browser](https://www.emailjs.com/)
+*   **Iconografía**: [React Icons](https://react-icons.github.io/react-icons/)
 
-## 🛠️ Tecnologías Utilizadas
+## � Secciones del Portfolio
 
-*   **[React](https://reactjs.org/)**: Biblioteca para construir interfaces de usuario.
-*   **[Vite](https://vitejs.dev/)**: Herramienta de frontend para un desarrollo rápido.
-*   **[ESLint](https://eslint.org/)**: Para mantener un código limpio y consistente.
-*   **CSS Modules**: Para estilos encapsulados por componente.
+La consola se divide en módulos operativos integrados:
 
-## ⚙️ Instalación y Setup
+1.  **Sobre Mí**: Perfil técnico, estadísticas de carrera y descarga de CV dual (ES/EN).
+2.  **Experiencia**: Historial profesional con geolocalización de empresas en tiempo real.
+3.  **Formación**: Formación académica e idiomas con visualizadores de nivel.
+4.  **Proyectos**: Galería de desarrollo con etiquetas tecnológicas y accesos directos.
+5.  **Hub de Contacto**: Centro unificado que fusiona el formulario de contacto con nodos sociales (WhatsApp, GitHub, LinkedIn).
 
-¿Quieres ejecutar este proyecto en tu máquina local? ¡Sigue estos pasos!
+## ⚙️ Cómo Iniciarlo Localmente
 
-1.  **Clona el repositorio:**
+Sigue estos pasos para desplegar el terminal en tu entorno local:
+
+1.  **Clonar el Repositorio**:
     ```bash
-    git clone https://github.com/your-username/your-repository.git
+    git clone https://github.com/AngelL1TR0/Portfolio.git
     ```
-2.  **Navega al directorio del proyecto:**
-    ```bash
-    cd portfolio-react
-    ```
-3.  **Instala las dependencias:**
+2.  **Instalar Dependencias**:
     ```bash
     npm install
     ```
-4.  **Inicia el servidor de desarrollo:**
+3.  **Lanzar Entorno de Desarrollo**:
     ```bash
     npm run dev
     ```
-5.  **¡Abre tu navegador!**
-    La aplicación estará disponible en `http://localhost:5173`.
-
-## 📸 Screenshots
-
-| Escritorio                                     | Móvil                                     |
-| ---------------------------------------------- | ----------------------------------------- |
-| ![Screenshot de Escritorio](URL_DEL_SCREENSHOT) | ![Screenshot de Móvil](URL_DEL_SCREENSHOT) |
-
-## 📫 Contacto
-
-¿Interesado en colaborar o simplemente quieres saludar? ¡No dudes en contactarme!
-
-*   **Email:** [tu-email@ejemplo.com](mailto:tu-email@ejemplo.com)
-*   **LinkedIn:** [tu-perfil-de-linkedin](https://www.linkedin.com/in/tu-perfil/)
-
----
-
-*Este README fue generado con la ayuda de Gemini.*
+    *La interfaz estará disponible en `http://localhost:5173`.*

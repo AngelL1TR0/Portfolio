@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Container, Row, Col, Form } from 'react-bootstrap';
 import { motion, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
+import { FaWhatsapp, FaGithub, FaLinkedin, FaPaperPlane } from 'react-icons/fa';
 import { portfolioData } from '../data/portfolioData';
 
 function Contact() {
@@ -11,7 +12,7 @@ function Contact() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-    setStatus({ type: 'loading', message: 'Transmitiendo paquete...' });
+    setStatus({ type: 'loading', message: 'TRANSMITI_...' });
 
     emailjs.sendForm(
       import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -20,10 +21,10 @@ function Contact() {
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
       .then((result) => {
-        setStatus({ type: 'success', message: '_PAYLOAD_DELIVERED_SUCCESS' });
+        setStatus({ type: 'success', message: 'DELIVERED_OK' });
         formRef.current.reset();
       }, (error) => {
-        setStatus({ type: 'error', message: '_CONNECTION_REFUSED_TIMEOUT' });
+        setStatus({ type: 'error', message: 'ERROR_NET' });
       });
   };
 
@@ -31,77 +32,116 @@ function Contact() {
     <section id="contact" className="section pb-5 pt-0">
       <Container>
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}>
-          <div className="cyber-card p-5 max-width-800 mx-auto overflow-hidden">
-            <div className="mono accent-text mb-2">// comms.handshake()</div>
-            <h2 className="mb-5 text-start fs-1">Abrir <span className="accent-text">Canal</span></h2>
-            <Row>
-              <Col lg={7} className="mb-4 mb-lg-0">
-                <Form ref={formRef} onSubmit={sendEmail} className="form-compact">
-                  <Form.Group className="mb-3" controlId="formName">
-                    <Form.Label>_source_id</Form.Label>
-                    <Form.Control name="user_name" type="text" placeholder="Tu nombre..." required />
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="formEmail">
-                    <Form.Label>_return_address</Form.Label>
-                    <Form.Control name="user_email" type="email" placeholder="tu@email.com" required />
-                  </Form.Group>
-                  <Form.Group className="mb-3" controlId="formMessage">
-                    <Form.Label>_message_payload</Form.Label>
-                    <Form.Control name="message" as="textarea" rows={3} placeholder="Escribe tu mensaje..." required />
-                  </Form.Group>
-
-                  <button type="submit" className="btn-cyber w-100 py-2 mt-2" disabled={status.type === 'loading'}>
-                    {status.type === 'loading' ? 'Transmitiendo...' : 'ENVIAR MENSAJE'}
-                  </button>
-
-                  <AnimatePresence>
-                    {status.message && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className={`mt-3 mono small ${status.type === 'success' ? 'text-success' : 'text-danger'}`}>
-                        {status.message}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </Form>
-              </Col>
-              <Col lg={5} className="ps-lg-5 d-flex flex-column justify-content-center">
-                <div className="mb-5">
-                  <h4 className="fw-bold mb-3 mono text-white small">Protocolos Directos</h4>
-
-                  <motion.a
-                    href={`https://wa.me/${(import.meta.env.VITE_CONTACT_WHATSAPP || '').replace('+', '')}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-cyber w-100 py-2 text-decoration-none d-flex align-items-center justify-content-center mb-4 mono smaller"
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    ESTABLECER_WHATSAPP_SIGNAL
-                  </motion.a>
-
-                  <h4 className="fw-bold mb-3 mono text-white small">Nodos Sociales</h4>
-                  <div className="d-flex flex-column gap-2">
-                    {socialLinks.map(social => (
-                      <motion.a
-                        key={social.name}
-                        whileHover={{ x: 5, color: '#00f2ff' }}
-                        href={social.url}
-                        className="text-secondary mono text-decoration-none small">
-                        <span className="accent-text">{social.icon}</span> {social.name}
-                      </motion.a>
-                    ))}
-                  </div>
-                </div>
-              </Col>
-            </Row>
-          </div>
+          className="text-center mb-4"
+        >
+          <div className="mono accent-text small mb-1">// nex.uplink</div>
+          <h2 className="display-5 fw-bold text-white mb-0" style={{ letterSpacing: '-1px' }}>HUB_CONTACTO</h2>
         </motion.div>
+
+        <Row className="justify-content-center g-4 align-items-stretch">
+          <Col lg={7}>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="cyber-card p-4 h-100"
+              style={{ borderTop: '3px solid var(--accent-color)' }}
+            >
+              <h5 className="mono text-white mb-4 d-flex align-items-center gap-2">
+                <span className="accent-text">&gt;</span> EMAIL_RELAY
+              </h5>
+
+              <Form ref={formRef} onSubmit={sendEmail} className="form-compact">
+                <Row className="g-3">
+                  <Col md={6}>
+                    <div className="mb-3">
+                      <label className="mono smaller accent-text d-block mb-1">_id</label>
+                      <Form.Control name="user_name" type="text" placeholder="Tu Nombre" required />
+                    </div>
+                  </Col>
+                  <Col md={6}>
+                    <div className="mb-3">
+                      <label className="mono smaller accent-text d-block mb-1">_path</label>
+                      <Form.Control name="user_email" type="email" placeholder="email@red.com" required />
+                    </div>
+                  </Col>
+                </Row>
+
+                <div className="mb-4">
+                  <label className="mono smaller accent-text d-block mb-1">_payload</label>
+                  <Form.Control name="message" as="textarea" rows={3} placeholder="Mensaje..." required />
+                </div>
+
+                <button type="submit" className="btn-cyber w-100 py-3 fw-bold" disabled={status.type === 'loading'}>
+                  {status.type === 'loading' ? '...' : <><FaPaperPlane className="me-2" /> ENVIAR_DATOS</>}
+                </button>
+
+                <AnimatePresence>
+                  {status.message && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className={`mt-3 mono shadow-sm text-center p-2 rounded-pill ${status.type === 'success' ? 'bg-success bg-opacity-10 text-success' : 'bg-danger bg-opacity-10 text-danger'}`}
+                      style={{ fontSize: '0.7rem', border: '1px solid currentColor' }}
+                    >
+                      {status.message}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </Form>
+            </motion.div>
+          </Col>
+
+          <Col lg={4}>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="d-flex flex-column gap-3 h-100"
+            >
+              <div className="d-flex align-items-center justify-content-between mb-1 px-1">
+                <span className="mono accent-text smaller">// UPLINKS_ACTIVE</span>
+                <span className="mono accent-text smaller">V4.8.2</span>
+              </div>
+
+              <motion.a
+                href={`https://wa.me/${(import.meta.env.VITE_CONTACT_WHATSAPP || '').replace('+', '')}`}
+                target="_blank"
+                className="social-card card-whatsapp card-sidebar flex-grow-1"
+                whileHover={{ x: 5 }}
+              >
+                <div className="card-icon"><FaWhatsapp /></div>
+                <div className="card-label">WhatsApp</div>
+                <div className="card-desc">Direct Transmission</div>
+              </motion.a>
+
+              <motion.a
+                href={import.meta.env.VITE_GITHUB_URL || '#'}
+                target="_blank"
+                className="social-card card-github card-sidebar flex-grow-1"
+                whileHover={{ x: 5 }}
+              >
+                <div className="card-icon"><FaGithub /></div>
+                <div className="card-label">GitHub</div>
+                <div className="card-desc">Source Code</div>
+              </motion.a>
+
+              <motion.a
+                href={import.meta.env.VITE_LINKEDIN_URL || '#'}
+                target="_blank"
+                className="social-card card-linkedin card-sidebar flex-grow-1"
+                whileHover={{ x: 5 }}
+              >
+                <div className="card-icon"><FaLinkedin /></div>
+                <div className="card-label">LinkedIn</div>
+                <div className="card-desc">Pro Layer</div>
+              </motion.a>
+            </motion.div>
+          </Col>
+        </Row>
       </Container>
     </section>
   );

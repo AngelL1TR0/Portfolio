@@ -1,13 +1,13 @@
 export const portfolioData = {
     personalInfo: {
-        name: "Angel Torija Sanchez-Jara",
-        role: "Full Stack Developer",
+        name: import.meta.env.VITE_USER_NAME || "Angel Torija",
+        role: import.meta.env.VITE_USER_ROLE || "Full Stack Developer",
         location: {
-            label: "España, Getafe",
-            lat: 40.0667,
-            lon: -3.7000
+            label: import.meta.env.VITE_LOCATION_LABEL || "España",
+            lat: parseFloat(import.meta.env.VITE_LOCATION_LAT) || 40.4168,
+            lon: parseFloat(import.meta.env.VITE_LOCATION_LON) || -3.7038
         },
-        aboutShort: "> Diseñando el futuro a través de código limpio y experiencias interactivas.",
+        aboutShort: import.meta.env.VITE_BIO_SHORT || "> Diseñando el futuro a través de código limpio.",
         cvLink: "#",
         skills: ["React", "Angular", "TypeScript", "C#", ".Net", "Java", "Python", "Clean Code", "IA", "Vibe Coding"],
         softSkills: ["Arquitectura Limpia", "Resolución de Problemas", "Trabajo en Equipo", "Adaptabilidad"],
@@ -34,10 +34,13 @@ export const portfolioData = {
         { name: "Inglés", level: "B2 - Intermedio Alto" }
     ],
 
-    certifications: [
+    certifications: [],
+    /* 
+    certifications_data: [
         { name: "Azure Fundamentals (AZ-900)", issuer: "Microsoft", year: "2023" },
         { name: "Cisco CCNA", issuer: "Cisco", year: "2022" }
     ],
+    */
 
     experience: [
         {
@@ -90,22 +93,22 @@ export const portfolioData = {
         {
             id: 1,
             name: 'Portfolio React',
-            description: 'Portfolio React creado con React y Tailwind CSS.',
-            link: '#',
-            tags: ['React', 'Tailwind CSS', 'TypeScript']
+            description: 'Portfolio profesional de alto rendimiento con estética Master Hub y micro-interacciones avanzadas.',
+            link: import.meta.env.VITE_GITHUB_URL_portfolio || '#',
+            tags: ['React', 'Vanilla CSS', 'Framer Motion']
         },
         {
             id: 2,
             name: 'PetFind',
             description: 'Aplicación movil dedicada a encontrar mascotas para pasear juntas.',
-            link: '#',
+            link: import.meta.env.VITE_GITHUB_URL_pet || '#',
             tags: ['Node.js', 'C#', 'PostgreSQL', 'TypeScript']
         },
         {
             id: 3,
             name: 'TerminalResults',
-            description: 'Aplicación para mostrar resultados de futbol en la terminal como antigamente lo hacia el teletexto.',
-            link: '#',
+            description: 'Aplicación para mostrar resultados de futbol en la terminal como antiguamente lo hacia el teletexto.',
+            link: import.meta.env.VITE_GITHUB_URL_terminal || '#',
             tags: ['C#', 'WPF', 'MVVM', 'MVVM Light', 'Entity Framework', 'PostgreSQL']
         },
     ],

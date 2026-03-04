@@ -450,7 +450,7 @@ const ResumePDF = ({ lang = 'es' }) => {
                 </View>
 
                 <Text style={styles.footer}>
-                    {t.labels.generated} | {new Date().toLocaleDateString(lang === 'en' ? 'en-US' : 'es-ES')} | Versión 3.5.0
+                    {t.labels.generated} | {new Date().toLocaleDateString(lang === 'en' ? 'en-US' : 'es-ES')} | Versión 4.9.0
                 </Text>
             </Page>
         </Document>

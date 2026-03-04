@@ -114,7 +114,7 @@ function About() {
                 </div>
                 <div className="ms-3 mb-1">role: <span className="text-success">'{personalInfo.role}'</span>,</div>
                 <div className="ms-3 mb-1 d-flex flex-wrap gap-1">
-                  shills: [
+                  skills: [
                   {personalInfo.skills.map((skill, i) => (
                     <span key={i} className="text-success">
                       '{skill}'{i < personalInfo.skills.length - 1 ? ',' : ''}

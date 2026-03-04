@@ -17,11 +17,11 @@ const Credentials = () => {
                     className="text-center mb-5"
                 >
                     <div className="mono accent-text mb-2">// system.credentials</div>
-                    <h2 className="mb-0">Formación y Certificados</h2>
+                    <h2 className="mb-0">Formación Académica</h2>
                 </motion.div>
 
-                <Row className="g-4">
-                    <Col lg={4}>
+                <Row className="g-4 justify-content-center">
+                    <Col lg={5}>
                         <motion.div
                             className="cyber-card h-100 p-4"
                             initial={{ opacity: 0, x: -20 }}
@@ -42,37 +42,16 @@ const Credentials = () => {
                         </motion.div>
                     </Col>
 
-                    <Col lg={4}>
-                        <motion.div
-                            className="cyber-card h-100 p-4"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
-                        >
-                            <h4 className="text-white mono mb-4 d-flex align-items-center gap-2">
-                                <span className="accent-text">02.</span> Certificados
-                            </h4>
-                            {certifications.map((cert, i) => (
-                                <div key={i} className="mb-4">
-                                    <div className="accent-text mono small mb-1">{cert.year}</div>
-                                    <div className="text-white fw-bold mb-1">{cert.name}</div>
-                                    <div className="text-secondary smaller mono">{cert.issuer}</div>
-                                </div>
-                            ))}
-                        </motion.div>
-                    </Col>
-
-                    <Col lg={4}>
+                    <Col lg={5}>
                         <motion.div
                             className="cyber-card h-100 p-4"
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: 0.4 }}
+                            transition={{ delay: 0.2 }}
                         >
                             <h4 className="text-white mono mb-4 d-flex align-items-center gap-2">
-                                <span className="accent-text">03.</span> Idiomas
+                                <span className="accent-text">02.</span> Idiomas
                             </h4>
                             {languages.map((lang, i) => (
                                 <div key={i} className="mb-4">
@@ -97,6 +76,29 @@ const Credentials = () => {
                             ))}
                         </motion.div>
                     </Col>
+
+                    {/* Certificados ocultos temporalmente v4.9 
+                    <Col lg={4}>
+                        <motion.div
+                            className="cyber-card h-100 p-4"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            <h4 className="text-white mono mb-4 d-flex align-items-center gap-2">
+                                <span className="accent-text">02.</span> Certificados
+                            </h4>
+                            {certifications && certifications.map((cert, i) => (
+                                <div key={i} className="mb-4">
+                                    <div className="accent-text mono small mb-1">{cert.year}</div>
+                                    <div className="text-white fw-bold mb-1">{cert.name}</div>
+                                    <div className="text-secondary smaller mono">{cert.issuer}</div>
+                                </div>
+                            ))}
+                        </motion.div>
+                    </Col>
+                    */}
                 </Row>
             </Container>
         </section>

@@ -70,7 +70,8 @@ body::before {
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
-  border-radius: 12px;
+  border-radius: 16px;
+  /* Back to rounded premium */
   position: relative;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
@@ -89,7 +90,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 12px;
+  border-radius: 16px;
   background: linear-gradient(135deg, transparent 0%, var(--accent-glow) 100%);
   opacity: 0;
   transition: opacity 0.4s;
@@ -177,6 +178,18 @@ h2 {
   padding: 10px 15px;
   display: flex;
   gap: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.terminal-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 242, 255, 0.03));
 }
 
 .terminal-dot {
@@ -199,23 +212,52 @@ h2 {
 
 /* Redefined Utility Classes */
 .btn-cyber {
-  background: transparent;
-  border: 1px solid var(--accent-color);
+  background: rgba(0, 242, 255, 0.05);
+  /* Slightly more visible glass */
+  border: 1px solid var(--glass-border);
   color: var(--accent-color);
   padding: 12px 30px;
-  border-radius: 4px;
+  border-radius: 12px;
+  /* Matching the page's rounded design */
   font-family: 'Fira Code', monospace;
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-cyber::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 242, 255, 0.1), transparent);
+  transition: 0.5s;
+}
+
+.btn-cyber:hover::before {
+  left: 100%;
 }
 
 .btn-cyber:hover {
   background: var(--accent-glow);
   box-shadow: 0 0 15px var(--accent-color);
   color: #fff;
+  transform: scale(1.02);
+}
+
+.btn-cyber:disabled {
+  border-color: var(--text-secondary);
+  color: var(--text-secondary);
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* Stats Box */
@@ -260,28 +302,286 @@ h2 {
 
 /* Compact Form Styles */
 .form-compact .form-control {
-  background: rgba(1, 22, 39, 0.5) !important;
-  border-radius: 4px !important;
-  border: 1px solid #2a2a2a !important;
+  background: rgba(1, 22, 39, 0.8) !important;
+  border-radius: 12px !important;
+  /* Back to rounded */
+  border: 1px solid var(--glass-border) !important;
   color: #fff !important;
-  padding: 0.8rem !important;
-  font-size: 0.9rem !important;
+  padding: 1rem !important;
+  font-size: 0.95rem !important;
   font-family: 'Fira Code', monospace;
+  transition: all 0.3s;
+}
+
+.form-compact .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
+  /* Brighter placeholder */
+  opacity: 1;
 }
 
 .form-compact .form-control:focus {
   border-color: var(--accent-color) !important;
-  box-shadow: 0 0 5px var(--accent-glow) !important;
+  background: rgba(1, 22, 39, 1) !important;
+  box-shadow: 0 0 15px rgba(0, 242, 255, 0.1) !important;
 }
 
 .form-compact label {
-  font-size: 0.7rem !important;
+  font-size: 0.65rem !important;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 0.4rem;
-  opacity: 0.7;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+/* --- Social Cards (Screenshot Inspired) --- */
+.social-card {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2.5rem 1.5rem !important;
+  background: rgba(10, 25, 47, 0.5) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 20px !important;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1) !important;
+  text-decoration: none !important;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.social-card .card-icon {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.4s;
+  z-index: 2;
+}
+
+.social-card .card-label {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  z-index: 2;
+}
+
+.social-card .card-desc {
+  font-size: 0.85rem;
   color: var(--text-secondary);
+  line-height: 1.4;
+  z-index: 2;
+  transition: color 0.3s;
+}
+
+.social-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--brand-color, var(--accent-color));
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s;
+}
+
+/* Hover State - Extreme Master Fill */
+.social-card:hover {
+  transform: translateY(-3px) scale(1.03) !important;
+  border-color: var(--brand-color, var(--accent-color)) !important;
+  box-shadow: 0 0 40px var(--brand-glow, rgba(0, 242, 255, 0.5)) !important;
+  background: rgba(10, 25, 47, 0.3) !important;
+}
+
+.social-card:hover::after {
+  opacity: 0.25;
+  /* Even more intense fill as requested */
+}
+
+.social-card:hover .card-label {
+  text-shadow: 0 0 10px var(--brand-color);
+}
+
+.social-card:hover .card-desc {
+  color: #fff;
+  opacity: 1;
+}
+
+.social-card:hover .card-icon {
+  transform: scale(1.2) rotate(8deg);
+  filter: drop-shadow(0 0 10px var(--brand-color));
+}
+
+.social-card.card-sidebar {
+  padding: 0.85rem 1rem !important;
+  /* MUCH MORE COMPACT (LESS LONG) */
+}
+
+.social-card.card-sidebar .card-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.social-card.card-sidebar .card-label {
+  font-size: 0.95rem;
+  margin-bottom: 0.1rem;
+}
+
+.social-card.card-sidebar .card-desc {
+  font-size: 0.65rem;
+  opacity: 0.7;
+}
+
+/* Specific Brands */
+.card-whatsapp {
+  --brand-color: #25D366;
+  --brand-glow: rgba(37, 211, 102, 0.2);
+}
+
+.card-github {
+  --brand-color: #fff;
+  --brand-glow: rgba(255, 255, 255, 0.15);
+}
+
+.card-linkedin {
+  --brand-color: #0077b5;
+  --brand-glow: rgba(0, 119, 181, 0.2);
+}
+
+.card-leetcode {
+  --brand-color: #FFA116;
+  --brand-glow: rgba(255, 161, 22, 0.2);
+}
+
+/* Scanline animation for cards */
+.social-card::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(transparent,
+      rgba(255, 255, 255, 0.05),
+      transparent);
+  transition: 0.8s;
+  pointer-events: none;
+}
+
+.social-card:hover::before {
+  top: 100%;
+}
+
+/* Tactical Contact Nodes - Expert Polish (Compact & Interactive) */
+.contact-node {
+  display: flex !important;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.75rem 1.25rem !important;
+  /* COMPACT PADDING */
+  text-decoration: none !important;
+  border: 1px solid var(--glass-border) !important;
+  background: rgba(10, 25, 47, 0.4) !important;
+  transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1) !important;
+  /* Smoother transition */
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px !important;
+}
+
+.contact-node::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, currentColor, transparent);
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.contact-node:hover::before {
+  left: 100%;
+  opacity: 0.4;
+}
+
+.contact-node .node-icon {
+  flex-shrink: 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  transition: all 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-node .node-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  flex-grow: 1;
+}
+
+.contact-node .node-label {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.3px;
+  color: #fff;
+}
+
+.contact-node .node-meta {
   font-family: 'Fira Code', monospace;
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.5;
+}
+
+/* Expert Hover Effects per Brand (Background Color Fill) */
+.contact-node:hover {
+  transform: translateX(8px) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3) !important;
+}
+
+.node-whatsapp:hover {
+  border-color: rgba(37, 211, 102, 0.4) !important;
+  background: rgba(37, 211, 102, 0.08) !important;
+  /* ELEGANT BRAND FILL */
+  color: #25D366;
+}
+
+.node-whatsapp:hover .node-icon {
+  background: rgba(37, 211, 102, 0.15);
+  transform: rotate(5deg) scale(1.1);
+}
+
+.node-github:hover {
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  /* ELEGANT BRAND FILL */
+  color: #fff;
+}
+
+.node-github:hover .node-icon {
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(-5deg) scale(1.1);
+}
+
+.node-linkedin:hover {
+  border-color: rgba(0, 119, 181, 0.4) !important;
+  background: rgba(0, 119, 181, 0.08) !important;
+  /* ELEGANT BRAND FILL */
+  color: #0077b5;
+}
+
+.node-linkedin:hover .node-icon {
+  background: rgba(0, 119, 181, 0.15);
+  transform: rotate(5deg) scale(1.1);
 }
 
 /* Map Popover */
