@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
-import WorldMap from './WorldMap';
 import { PDFDownloadLink } from '@react-pdf/renderer';
-import ResumePDF from './ResumePDF';
+import { lazy, Suspense } from 'react';
+import WorldMapSkeleton from './WorldMapSkeleton';
+
+const ResumePDF = lazy(() => import('./ResumePDF'));
+const WorldMap = lazy(() => import('./WorldMap'));
 
 function About() {
   const { personalInfo, stats } = portfolioData;
@@ -70,25 +73,29 @@ function About() {
                     ))}
                   </div>
 
-                  <PDFDownloadLink
-                    document={<ResumePDF lang={cvLang} />}
-                    fileName={`CV_Angel_Torija_${cvLang.toUpperCase()}.pdf`}
-                    className="text-decoration-none"
-                  >
-                    {({ loading }) => (
-                      <button className="btn-cyber" disabled={loading}>
-                        {loading ? '...' : `Descargar CV [${cvLang.toUpperCase()}]`}
-                      </button>
-                    )}
-                  </PDFDownloadLink>
+                  <Suspense fallback={<button className="btn-cyber">Cargando...</button>}>
+                    <PDFDownloadLink
+                      document={<ResumePDF lang={cvLang} />}
+                      fileName={`CV_Angel_Torija_${cvLang.toUpperCase()}.pdf`}
+                      className="text-decoration-none"
+                    >
+                      {({ loading }) => (
+                        <button className="btn-cyber" disabled={loading}>
+                          {loading ? '...' : `Descargar CV [${cvLang.toUpperCase()}]`}
+                        </button>
+                      )}
+                    </PDFDownloadLink>
+                  </Suspense>
                 </div>
                 <div className="d-flex align-items-center gap-2 text-secondary mono">
                   <span className="accent-text">•</span>
-                  <WorldMap
-                    lat={personalInfo.location.lat}
-                    lon={personalInfo.location.lon}
-                    label={personalInfo.location.label}
-                  />
+                  <Suspense fallback={<WorldMapSkeleton />}>
+                    <WorldMap
+                      lat={personalInfo.location.lat}
+                      lon={personalInfo.location.lon}
+                      label={personalInfo.location.label}
+                    />
+                  </Suspense>
                 </div>
               </div>
             </motion.div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import DynamicNav from './components/DynamicNav';
 import About from './components/About';
@@ -10,6 +10,9 @@ import LoadingScreen from './components/LoadingScreen';
 import CyberSentinel from './components/CyberSentinel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
+
+const ResumePDF = lazy(() => import('./components/ResumePDF'));
+const WorldMap = lazy(() => import('./components/WorldMap'));
 
 function App() {
   const [loading, setLoading] = useState(true);
