@@ -1,4 +1,4 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React from 'react';
 import { AnimatePresence } from 'framer-motion';
 import DynamicNav from './components/DynamicNav';
 import About from './components/About';
@@ -6,31 +6,12 @@ import Experience from './components/Experience';
 import Credentials from './components/Credentials';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
-import LoadingScreen from './components/LoadingScreen';
-import CyberSentinel from './components/CyberSentinel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
-const ResumePDF = lazy(() => import('./components/ResumePDF'));
-const WorldMap = lazy(() => import('./components/WorldMap'));
-
 function App() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate initial loading time
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2500);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div className="App">
-      <AnimatePresence>
-        {loading && <LoadingScreen key="loader" />}
-      </AnimatePresence>
-
       <main>
         <DynamicNav />
         <About />
@@ -39,7 +20,6 @@ function App() {
         <Projects />
         <Contact />
       </main>
-      <CyberSentinel />
 
       <footer className="py-4 text-center mono smaller text-secondary" style={{ background: '#050a15', borderTop: '1px solid rgba(0, 242, 255, 0.05)' }}>
         <div className="container">

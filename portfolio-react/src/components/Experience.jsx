@@ -2,10 +2,6 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
-import { lazy, Suspense } from 'react';
-import WorldMapSkeleton from './WorldMapSkeleton';
-
-const WorldMap = lazy(() => import('./WorldMap'));
 
 function Experience() {
     const { experience } = portfolioData;
@@ -41,15 +37,7 @@ function Experience() {
                                             <div className="d-flex align-items-center gap-2 mb-2">
                                                 <span className="accent-text mono small">{exp.company}</span>
                                                 <span className="text-secondary smaller">•</span>
-                                                <Suspense fallback={<WorldMapSkeleton />}>
-                                                    <WorldMap
-                                                        lat={exp.location.lat}
-                                                        lon={exp.location.lon}
-                                                        label={exp.location.label}
-                                                    >
-                                                        <span className="text-secondary smaller mono" style={{ fontSize: '0.7rem' }}>{exp.location.label}</span>
-                                                    </WorldMap>
-                                                </Suspense>
+                                                <span className="text-secondary smaller mono" style={{ fontSize: '0.7rem' }}>{exp.location.label}</span>
                                             </div>
                                         </div>
                                         <span className="badge bg-secondary bg-opacity-10 text-secondary mono px-3 py-2">

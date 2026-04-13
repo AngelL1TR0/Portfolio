@@ -4,10 +4,8 @@ import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { lazy, Suspense } from 'react';
-import WorldMapSkeleton from './WorldMapSkeleton';
 
 const ResumePDF = lazy(() => import('./ResumePDF'));
-const WorldMap = lazy(() => import('./WorldMap'));
 
 function About() {
   const { personalInfo, stats } = portfolioData;
@@ -89,13 +87,7 @@ function About() {
                 </div>
                 <div className="d-flex align-items-center gap-2 text-secondary mono">
                   <span className="accent-text">•</span>
-                  <Suspense fallback={<WorldMapSkeleton />}>
-                    <WorldMap
-                      lat={personalInfo.location.lat}
-                      lon={personalInfo.location.lon}
-                      label={personalInfo.location.label}
-                    />
-                  </Suspense>
+                  <span style={{ color: '#00f2ff' }}>{personalInfo.location.label}</span>
                 </div>
               </div>
             </motion.div>
