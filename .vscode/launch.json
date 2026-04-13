@@ -6,7 +6,7 @@
             "type": "firefox",
             "request": "launch",
             "url": "http://localhost:5173/Portfolio/",
-            "firefoxExecutable": "C:\\Program Files\\Firefox Nightly\\firefox.exe",
+            "firefoxExecutable": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
             "webRoot": "${workspaceFolder}/portfolio-react",
             "pathMappings": [
                 {

@@ -9,13 +9,13 @@ export const portfolioData = {
         },
         aboutShort: import.meta.env.VITE_BIO_SHORT || "> Diseñando el futuro a través de código limpio.",
         cvLink: "#",
-        skills: ["React", "Angular", "TypeScript", "C#", ".Net", "Java", "Python", "Clean Code", "IA", "Vibe Coding"],
-        softSkills: ["Arquitectura Limpia", "Resolución de Problemas", "Trabajo en Equipo", "Adaptabilidad"],
+        skills: ["React", "Angular", "TypeScript", "C#", ".NET Core", "Web API", "SQL Server", "PostgreSQL", "Azure DevOps", "Docker", "TFS", "Git", "Agile", "IA", "Clean Architecture", "SOLID", "Microservices", "Clean Code"],
+        softSkills: ["Liderazgo Técnico", "Resolución de Problemas Críticos", "Visión de Negocio y Producto", "Metodologías Ágiles (Scrum/Kanban)", "Pensamiento Analítico", "Comunicación en Entornos Enterprise", "Optimización de Procesos", "Adaptabilidad Tecnológica"],
     },
 
     stats: [
-        { label: "Años Exp.", value: "2+" },
-        { label: "Proyectos", value: "20+" },
+        { label: "Años Exp.", value: "3+" },
+        { label: "Proyectos", value: "10+" },
         { label: "Tecnologías", value: "12+" },
         { label: "Commits", value: "1k+" }
     ],
@@ -31,7 +31,7 @@ export const portfolioData = {
 
     languages: [
         { name: "Español", level: "Nativo" },
-        { name: "Inglés", level: "B2 - Intermedio Alto" }
+        { name: "Inglés", level: "B1 - Intermedio, Profesional" }
     ],
 
     certifications: [],
@@ -65,19 +65,19 @@ export const portfolioData = {
                 lon: -3.7333
             },
             description: "Ingeniería de software para gigantes del sector aeroespacial (T-SYSTEMS y AIRBUS). Liderazgo en migraciones críticas de sistemas legados y despliegue de protocolos de seguridad avanzados en entornos cloud-ready.",
-            secrets: ["SEO Optimization", "Angular", "PostgreSQL"]
+            secrets: [".NET", "Angular", "PostgreSQL", "TFS", "Clean Code", "Arquitectura Limpia", "C#"]
         },
         {
             company: "Sotec Consulting",
             role: "Full Stack Developer",
-            period: "Ene 2026 - Actualidad",
+            period: "Dic 2025 - Mar 2026",
             location: {
                 label: "Arguelles, Madrid (España)",
                 lat: 40.4236,
                 lon: -3.7157
             },
             description: "Desarrollo de plataforma crítica de matriculación para la UNIVERSIDAD PONTIFICIA DE COMILLAS. Optimización de flujos transaccionales de alta disponibilidad para el sector universitario.",
-            secrets: ["SEO Optimization", "Angular", "SQL Server"]
+            secrets: ["Claude", "Angular", ".NET", "TFS", "SQL Server"]
         }
     ],
 
@@ -109,7 +109,7 @@ export const portfolioData = {
             name: 'TerminalResults',
             description: 'Aplicación para mostrar resultados de futbol en la terminal como antiguamente lo hacia el teletexto.',
             link: import.meta.env.VITE_GITHUB_URL_terminal || '#',
-            tags: ['C#', 'WPF', 'MVVM', 'MVVM Light', 'Entity Framework', 'PostgreSQL']
+            tags: ['Python', 'Terminal', 'API REST', 'JSON']
         },
     ],
 

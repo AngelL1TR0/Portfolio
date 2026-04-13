@@ -69,7 +69,7 @@ const CyberSentinel = () => {
             return `${log} NODOS_SECUNDARIOS: Angel posee competencias en Java y Python, utilizándolos principalmente para integraciones específicas, scripts de automatización e inteligencia de datos.`;
         }
         if (q.includes('skill') || q.includes('tecnolog') || q.includes('sabes') || q.includes('stack') || q.includes('herramientas')) {
-            return `${log} CARGANDO_MATRIZ_HABILIDADES: ${info.skills.join(' • ')}. Especial mención a su dominio de la Arquitectura Limpia (Clean Architecture) y su reciente integración de 'Vibe Coding' e IA en procesos de desarrollo ágil.`;
+            return `${log} CARGANDO_MATRIZ_HABILIDADES: ${info.skills.slice(0, 10).join(' • ')}... y más. Especial mención a su dominio de la Arquitectura Limpia (Clean Architecture), Microservicios y su capacidad par integrar soluciones de IA en entornos productivos.`;
         }
 
         // 4. PROJECTS SPECIFIC
@@ -77,10 +77,10 @@ const CyberSentinel = () => {
             return `${log} PROYECTO_PETFIND: Un nodo de interacción social para mascotas. Stack: Node.js, C#, PostgreSQL. Enfocado en la usabilidad y la creación de comunidades dinámicas.`;
         }
         if (q.includes('terminal') || q.includes('futbol') || q.includes('teletexto')) {
-            return `${log} PROYECTO_TERMINAL_RESULTS: Nostalgia pura. Una UI retro estilo teletexto para datos deportivos reales. Desarrollado con C# y WPF bajo patrón MVVM. Un ejemplo de estética vs funcionalidad.`;
+            return `${log} PROYECTO_TERMINAL_RESULTS: Nostalgia pura. Una UI retro estilo teletexto para datos deportivos reales. Desarrollado íntegramente en Python bajo un enfoque de alto rendimiento para terminal. Un ejemplo de estética vs funcionalidad.`;
         }
         if (q.includes('esta web') || q.includes('portfolio') || q.includes('codigo fuente')) {
-            return `${log} PORTFOLIO_V4.9: Esta interfaz es una "Tactical Shell" construida con React y Vanilla CSS. Diseño enfocado en el rendimiento y la privacidad total de datos (Zero-Hardcode). ¿Quieres ver el código? Teclea 'GitHub'.`;
+            return `${log} PORTFOLIO_V4.9.1: Esta interfaz es una "Tactical Shell" construida con React, Vite 8 y Vanilla CSS. Diseño enfocado en el rendimiento y la privacidad total de datos (Zero-Hardcode). ¿Quieres ver el código? Teclea 'GitHub'.`;
         }
 
         // 5. CONTACT & CV

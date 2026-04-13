@@ -6,7 +6,10 @@ export const resumeTranslations = {
             skills: "Habilidades Técnicas",
             certifications: "Certificaciones",
             languages: "Idiomas",
-            projects: "Proyectos Destacados"
+            projects: "Proyectos Destacados",
+            soft_skills: "Soft Skills",
+            connect: "Conectar",
+            live_portfolio: "Portfolio en Vivo"
         },
         labels: {
             tech: "Tecnologías",
@@ -29,7 +32,18 @@ export const resumeTranslations = {
             // Projects
             proj_portfolio_desc: "Portfolio profesional de alto rendimiento con estética Master Hub y micro-interacciones avanzadas (Vanilla CSS & Framer Motion).",
             proj_petfind_desc: "Plataforma web para la comunidad de dueños de mascotas, facilitando encuentros y socialización.",
-            proj_terminal_desc: "Visualizador de resultados deportivos con estética retro 'teletexto', desarrollado en C# y WPF."
+            proj_terminal_desc: "Visualizador de resultados deportivos con estética retro 'teletexto', desarrollado íntegramente en Python.",
+            // Soft Skills
+            soft_skills: [
+                "Liderazgo Técnico",
+                "Resolución de Problemas Críticos",
+                "Visión de Negocio y Producto",
+                "Metodologías Ágiles (Scrum/Kanban)",
+                "Pensamiento Analítico",
+                "Comunicación en Entornos Enterprise",
+                "Optimización de Procesos",
+                "Adaptabilidad Tecnológica"
+            ]
         }
     },
     en: {
@@ -39,7 +53,10 @@ export const resumeTranslations = {
             skills: "Technical Skills",
             certifications: "Certifications",
             languages: "Languages",
-            projects: "Featured Projects"
+            projects: "Featured Projects",
+            soft_skills: "Soft Skills",
+            connect: "Connect",
+            live_portfolio: "Live Portfolio"
         },
         labels: {
             tech: "Technologies",
@@ -62,7 +79,18 @@ export const resumeTranslations = {
             // Projects
             proj_portfolio_desc: "High-performance professional portfolio featuring a Master Hub aesthetic and advanced micro-interactions (Vanilla CSS & Framer Motion).",
             proj_petfind_desc: "Web platform for the pet owner community, facilitating meetups and socialization.",
-            proj_terminal_desc: "Sports results visualizer with a retro 'teletext' aesthetic, developed using C# and WPF."
+            proj_terminal_desc: "Sports results visualizer with a retro 'teletext' aesthetic, fully developed in Python.",
+            // Soft Skills
+            soft_skills: [
+                "Technical Leadership",
+                "Critical Problem Solving",
+                "Business & Product Vision",
+                "Agile Methodologies (Scrum/Kanban)",
+                "Analytical Thinking",
+                "Communication in Enterprise Environments",
+                "Process Optimization",
+                "Technological Adaptability"
+            ]
         }
     }
 };

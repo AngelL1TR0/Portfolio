@@ -6,13 +6,15 @@ import { resumeTranslations } from '../utils/resumeTranslations';
 // Using standard PDF fonts (Helvetica) to ensure maximum compatibility and reliability
 const styles = StyleSheet.create({
     page: {
-        padding: 35,
+        paddingTop: 22,
+        paddingBottom: 22,
+        paddingHorizontal: 30,
         backgroundColor: '#ffffff',
         fontFamily: 'Helvetica',
         color: '#1a1a1a',
     },
     header: {
-        marginBottom: 15,
+        marginBottom: 10,
         borderBottomWidth: 1,
         borderBottomColor: '#0056b3',
         paddingBottom: 8,
@@ -68,10 +70,11 @@ const styles = StyleSheet.create({
     },
     mainLayout: {
         flexDirection: 'row',
-        gap: 20,
+        marginTop: 5,
     },
     leftCol: {
-        width: '72%',
+        width: '68%',
+        paddingRight: 15,
     },
     vDivider: {
         width: 1,
@@ -79,10 +82,14 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     rightCol: {
-        width: '28%',
+        width: '32%',
+        backgroundColor: '#f8fafc',
+        padding: 12,
+        borderRadius: 3,
+        height: '100%',
     },
     section: {
-        marginBottom: 18,
+        marginBottom: 11,
     },
     sectionHeader: {
         flexDirection: 'row',
@@ -100,14 +107,14 @@ const styles = StyleSheet.create({
         letterSpacing: 0.8,
     },
     bio: {
-        fontSize: 8.2,
-        lineHeight: 1.5,
+        fontSize: 8.0,
+        lineHeight: 1.45,
         color: '#4a5568',
         textAlign: 'justify',
         fontStyle: 'italic',
     },
     item: {
-        marginBottom: 12,
+        marginBottom: 8,
     },
     itemHeader: {
         flexDirection: 'row',
@@ -133,8 +140,8 @@ const styles = StyleSheet.create({
         marginBottom: 3,
     },
     itemDesc: {
-        fontSize: 8.2,
-        lineHeight: 1.5,
+        fontSize: 8.0,
+        lineHeight: 1.45,
         color: '#4a5568',
         textAlign: 'justify',
     },
@@ -150,8 +157,8 @@ const styles = StyleSheet.create({
     },
     bulletText: {
         flex: 1,
-        fontSize: 8.2,
-        lineHeight: 1.4,
+        fontSize: 8.0,
+        lineHeight: 1.35,
         color: '#4a5568',
     },
     techStack: {
@@ -162,37 +169,41 @@ const styles = StyleSheet.create({
     },
     projectItem: {
         width: '100%',
-        marginBottom: 8,
+        marginBottom: 5,
         paddingBottom: 6,
         borderBottomWidth: 0.2,
         borderBottomColor: '#f0f0f0',
     },
     sidebarTitle: {
-        fontSize: 9,
+        fontSize: 9.2,
         fontWeight: 700,
-        color: '#1a1a1a',
-        marginBottom: 6,
+        color: '#0056b3',
+        marginBottom: 8,
         textTransform: 'uppercase',
-        letterSpacing: 0.5,
+        letterSpacing: 0.8,
+        borderBottomWidth: 0.5,
+        borderBottomColor: '#e2e8f0',
+        paddingBottom: 3,
     },
     skillCategory: {
-        marginBottom: 8,
+        marginBottom: 4,
     },
     skillTitle: {
-        fontSize: 7.5,
+        fontSize: 7.8,
         color: '#0056b3',
         fontWeight: 'bold',
         textTransform: 'uppercase',
-        marginBottom: 2,
+        marginBottom: 3,
         letterSpacing: 0.5,
     },
     skillItem: {
-        fontSize: 8.2,
-        color: '#2d3748',
-        lineHeight: 1.3,
+        fontSize: 8.0,
+        color: '#334155',
+        lineHeight: 1.35,
+        marginBottom: 2,
     },
     languageItem: {
-        marginBottom: 6,
+        marginBottom: 3,
     },
     languageName: {
         fontSize: 8.5,
@@ -208,7 +219,7 @@ const styles = StyleSheet.create({
         fontWeight: 700,
     },
     qrContainer: {
-        marginTop: 15,
+        marginTop: 8,
         alignItems: 'center',
     },
     qrCode: {
@@ -246,7 +257,7 @@ const ResumePDF = ({ lang = 'es' }) => {
         const now = new Date();
         const diff = now - start;
         const years = diff / (1000 * 60 * 60 * 24 * 365.25);
-        return years.toFixed(1);
+        return Math.ceil(years);
     };
 
     // Helper to highlight specific keywords (CLIENTS)
@@ -265,9 +276,10 @@ const ResumePDF = ({ lang = 'es' }) => {
 
     // Skill categorization logic [V4.0]
     const skillCategories = [
-        { title: 'Frontend', skills: ['React', 'Angular', 'TypeScript'] },
-        { title: 'Backend & Core', skills: ['.Net', 'C#', 'Java', 'Python'] },
-        { title: 'Cloud & Tools', skills: ['Azure DevOps', 'Clean Code', 'IA'] }
+        { title: 'Frontend Stack', skills: ['React', 'Angular', 'TypeScript', 'RxJS'] },
+        { title: 'Backend & Data', skills: ['.NET Core', 'C#', 'Web API', 'SQL Server', 'PostgreSQL'] },
+        { title: 'Cloud & DevOps', skills: ['Azure DevOps', 'TFS', 'Docker', 'Git', 'Agile (Scrum)', 'IA'] },
+        { title: 'Architecture & Core', skills: ['Clean Architecture', 'Microservices', 'SOLID', 'Clean Code'] }
     ];
 
     return (
@@ -370,9 +382,6 @@ const ResumePDF = ({ lang = 'es' }) => {
                         </View>
                     </View>
 
-                    {/* VERTICAL DIVIDER */}
-                    <View style={styles.vDivider} />
-
                     {/* RIGHT COLUMN: Skills, Education, Langs, Certs */}
                     <View style={styles.rightCol}>
                         <View style={styles.section}>
@@ -380,14 +389,21 @@ const ResumePDF = ({ lang = 'es' }) => {
                             {skillCategories.map((cat, idx) => (
                                 <View key={idx} style={styles.skillCategory}>
                                     <Text style={styles.skillTitle}>{cat.title}</Text>
-                                    <Text style={styles.skillItem}>{cat.skills.join(' • ')}</Text>
+                                    <Text style={styles.skillItem}>
+                                        {cat.skills.map((skill, i) => (
+                                            <React.Fragment key={i}>
+                                                {i > 0 && <Text style={{ color: '#0056b3', fontWeight: 'bold' }}> • </Text>}
+                                                <Text>{skill}</Text>
+                                            </React.Fragment>
+                                        ))}
+                                    </Text>
                                 </View>
                             ))}
                         </View>
 
                         <View style={styles.section}>
-                            <Text style={styles.sidebarTitle}>Soft Skills</Text>
-                            {personalInfo.softSkills.map((skill, i) => (
+                            <Text style={styles.sidebarTitle}>{t.sections.soft_skills}</Text>
+                            {(t.data.soft_skills || personalInfo.softSkills).map((skill, i) => (
                                 <Text key={i} style={[styles.skillItem, { borderLeftColor: '#CBD5E0' }]}>{skill}</Text>
                             ))}
                         </View>
@@ -426,14 +442,14 @@ const ResumePDF = ({ lang = 'es' }) => {
                         </View>
 
                         <View style={styles.section}>
-                            <Text style={styles.sidebarTitle}>Connect</Text>
+                            <Text style={styles.sidebarTitle}>{t.sections.connect}</Text>
                             {githubUrl && <Link src={githubUrl} style={styles.contactRow}>GitHub: {getHandle(githubUrl)}</Link>}
                             {linkedinUrl && <Link src={linkedinUrl} style={styles.contactRow}>LinkedIn: {getHandle(linkedinUrl).includes('linkedin.com') ? getHandle(linkedinUrl).split('linkedin.com')[1] : '/in/angel'}</Link>}
                         </View>
 
                         {/* QR CODE FOR PORTFOLIO [LIVE FIX V4.0] */}
                         <View style={styles.qrContainer}>
-                            <Text style={[styles.sidebarTitle, { fontSize: 7, marginBottom: 5 }]}>Live Portfolio</Text>
+                            <Text style={[styles.sidebarTitle, { fontSize: 7, marginBottom: 5, borderBottomWidth: 0 }]}>{t.sections.live_portfolio}</Text>
                             <Image
                                 src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://angell1tr0.github.io/Portfolio/?#projects`}
                                 style={styles.qrCode}

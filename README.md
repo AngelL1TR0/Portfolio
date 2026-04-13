@@ -1,6 +1,6 @@
 # 🛰️ Angel Torija | Portfolio Tactical Console
 
-Este proyecto es un portfolio personal diseñado bajo una estética "Tactical Console" y "Master Hub". Se trata de una interfaz interactiva y de alto rendimiento que centraliza mi trayectoria profesional, proyectos y canales de contacto en una experiencia visual premium y técnica.
+Este proyecto es un portfolio profesional de alto rendimiento diseñado bajo una estética "Tactical Console" y "Master Hub". Se trata de una interfaz interactiva y de ingeniería avanzada que centraliza mi trayectoria como Senior-minded Full Stack Developer, integrando soluciones de software modernas y una experiencia visual premium.
 
 ## 🔗 Demo en Vivo
 Puedes acceder a la consola desplegada aquí:  
@@ -8,14 +8,15 @@ Puedes acceder a la consola desplegada aquí:
 
 ## 🛠️ Tecnologías y Librerías
 
-El núcleo tecnológico del proyecto se basa en un stack moderno para garantizar fluidez y reactividad:
+El núcleo tecnológico del proyecto se basa en un stack de última generación para garantizar fluidez, seguridad y excelencia técnica:
 
 *   **Framework**: [React 19](https://reactjs.org/) (Funcional y basado en Hooks)
-*   **Build Tool**: [Vite 7](https://vitejs.dev/) (Para carga ultra-rápida)
+*   **Build Tool**: [Vite 8](https://vitejs.dev/) (Utilizando el motor **Rolldown** para builds ultra-rápidos de ~2.5s)
 *   **Estilos**: 
-    *   **Vanilla CSS**: Diseño a medida con Tactical Glassmorphism.
+    *   **Vanilla CSS**: Diseño a medida con Tactical Glassmorphism y micro-animaciones.
     *   **Bootstrap 5**: Estructura de grid y componentes base.
-*   **Animaciones**: [Framer Motion 12](https://www.framer.com/motion/) (Micro-interacciones y transiciones suaves)
+*   **Animaciones**: [Framer Motion 12](https://www.framer.com/motion/) (Micro-interacciones y transiciones de estado fluido)
+*   **IA Táctica**: **CyberSentinel v4.9.1** (Interfaz de consulta heurística integrada)
 *   **Mapas Tácticos**: [MapLibre GL](https://maplibre.org/)
 *   **Gestión de Email**: [@emailjs/browser](https://www.emailjs.com/)
 *   **Iconografía**: [React Icons](https://react-icons.github.io/react-icons/)
