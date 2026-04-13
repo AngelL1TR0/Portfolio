@@ -1,49 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
-import maplibregl from 'maplibre-gl';
-import 'maplibre-gl/dist/maplibre-gl.css';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const WorldMap = ({ lat, lon, label, children }) => {
-    const mapContainer = useRef(null);
-    const map = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
-
-    useEffect(() => {
-        if (!isOpen || !mapContainer.current) return;
-
-        map.current = new maplibregl.Map({
-            container: mapContainer.current,
-            style: {
-                version: 8,
-                sources: {
-                    'osm': {
-                        type: 'raster',
-                        tiles: ['https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png'],
-                        tileSize: 256,
-                        attribution: '&copy; OpenStreetMap contributors'
-                    }
-                },
-                layers: [{
-                    id: 'osm',
-                    type: 'raster',
-                    source: 'osm',
-                    minzoom: 0,
-                    maxzoom: 19
-                }]
-            },
-            center: [lon, lat],
-            zoom: 12,
-            interactive: false
-        });
-
-        new maplibregl.Marker({ color: "#00f2ff" })
-            .setLngLat([lon, lat])
-            .addTo(map.current);
-
-        return () => {
-            if (map.current) map.current.remove();
-        };
-    }, [isOpen, lat, lon]);
 
     return (
         <div
@@ -67,12 +26,14 @@ const WorldMap = ({ lat, lon, label, children }) => {
                             bottom: '100%',
                             left: '50%',
                             transform: 'translateX(-50%)',
-                            width: '350px',
-                            height: '250px',
+                            width: '280px',
+                            height: '160px',
                             zIndex: 2000,
                             marginBottom: '15px',
                             background: '#020c1b',
-                            border: '1px solid var(--accent-color)'
+                            border: '1px solid var(--accent-color)',
+                            display: 'flex',
+                            flexDirection: 'column'
                         }}
                     >
                         <div className="terminal-header py-1 px-3 d-flex justify-content-between align-items-center">
@@ -83,7 +44,12 @@ const WorldMap = ({ lat, lon, label, children }) => {
                             </div>
                         </div>
 
-                        <div ref={mapContainer} className="w-100 h-100" style={{ minHeight: '180px' }} />
+                        <div className="flex-grow-1 d-flex align-items-center justify-content-center" style={{ background: 'radial-gradient(circle at center, rgba(0, 242, 255, 0.1) 0%, transparent 70%)' }}>
+                            <div className="text-center">
+                                <div style={{ color: '#00f2ff', fontSize: '2rem', marginBottom: '8px' }}>📍</div>
+                                <div className="mono text-secondary" style={{ fontSize: '0.7rem' }}>{label}</div>
+                            </div>
+                        </div>
 
                         <div
                             className="position-absolute bottom-0 start-0 w-100 p-2 mono text-secondary smaller d-flex justify-content-between"
