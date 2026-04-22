@@ -23,9 +23,9 @@ export const resumeTranslations = {
             role: import.meta.env.VITE_USER_ROLE || "Full Stack Developer",
             bio: import.meta.env.VITE_CV_BIO_ES || "Desarrollador Full Stack especializado en Arquitectura Limpia y ecosistemas Enterprise escalables. Experto en transformar requisitos de negocio complejos en soluciones de software de alto rendimiento, seguridad y excelencia técnica con un enfoque en la innovación continua.",
             // Experience
-            exp_originpath_desc: "Arquitectura y desarrollo de soluciones Enterprise a medida. Implementación de microservicios robustos y sistemas dinámicos bajo estándares de excelencia técnica.",
-            exp_malthus_desc: "Ingeniería de software para líderes aeroespaciales (T-SYSTEMS y AIRBUS). Liderazgo en migraciones críticas de sistemas legados y protocolos de seguridad avanzada.",
-            exp_sotec_desc: "Desarrollo de plataforma crítica de matriculación para la UNIVERSIDAD PONTIFICIA DE COMILLAS. Optimización de flujos transaccionales de alta disponibilidad.",
+            exp_originpath_desc: "Liderazgo técnico en la arquitectura y desarrollo de soluciones Enterprise a medida. Implementación de microservicios robustos y sistemas altamente escalables bajo estándares de Arquitectura Limpia, optimizando flujos de trabajo en entornos distribuidos.",
+            exp_malthus_desc: "Ingeniería de software de alta precisión para gigantes del sector aeroespacial (T-SYSTEMS y AIRBUS). Liderazgo en la migración crítica de sistemas legacy hacia arquitecturas modernas y despliegue de protocolos de seguridad avanzados en entornos cloud-ready.",
+            exp_sotec_desc: "Desarrollo y optimización de plataforma crítica de matriculación para la UNIVERSIDAD PONTIFICIA DE COMILLAS. Implementación de arquitecturas CQRS, integración de agentes de IA y optimización de flujos transaccionales de alta disponibilidad para el sector universitario.",
             // Education
             edu_degree: "Desarrollo de aplicaciones multiplataforma",
             edu_details: "Especialización en desarrollo de aplicaciones.",
@@ -70,9 +70,9 @@ export const resumeTranslations = {
             role: import.meta.env.VITE_USER_ROLE || "Full Stack Developer",
             bio: import.meta.env.VITE_CV_BIO_EN || "Senior-minded Full Stack Developer specializing in Clean Architecture and scalable Enterprise ecosystems. Expert in transforming complex business requirements into high-performance, secure software solutions with a focus on technical excellence and continuous innovation.",
             // Experience
-            exp_originpath_desc: "Architecting and developing custom Enterprise solutions. Implementation of robust microservices and scalable systems under Clean Architecture standards.",
-            exp_malthus_desc: "Software engineering for aerospace industry leaders (T-SYSTEMS & AIRBUS). Leading critical legacy migrations and deploying advanced security protocols.",
-            exp_sotec_desc: "Development of core enrollment platform for UNIVERSIDAD PONTIFICIA DE COMILLAS. Optimization of high-availability transactional flows for higher education.",
+            exp_originpath_desc: "Technical leadership in the architecture and development of custom Enterprise solutions. Implementation of robust microservices and highly scalable systems under Clean Architecture standards, optimizing workflows in distributed environments.",
+            exp_malthus_desc: "High-precision software engineering for aerospace industry leaders (T-SYSTEMS & AIRBUS). Leading critical legacy migrations toward modern architectures and deploying advanced security protocols in cloud-ready environments.",
+            exp_sotec_desc: "Development and optimization of the core enrollment platform for UNIVERSIDAD PONTIFICIA DE COMILLAS. Implementation of CQRS architectures, integration of AI Agents, and optimization of high-availability transactional flows for the university sector.",
             // Education
             edu_degree: "Multi-platform Application Development (DAM)",
             edu_details: "Specialization in software engineering and application development.",

@@ -112,18 +112,29 @@ const styles = StyleSheet.create({
         lineHeight: 1.3,
     },
     techTags: {
-        fontSize: 9,
-        color: COLORS.blueMain,
-        fontWeight: 'bold',
-        marginTop: 5,
+        fontSize: 8.5,
+        color: '#444444',
+        marginTop: 6,
         marginBottom: 15,
+        lineHeight: 1.4,
     },
-    sidebarSubTitle: {
-        fontSize: 10,
+    techLabel: {
         color: COLORS.blueMain,
         fontWeight: 'bold',
         textTransform: 'uppercase',
-        marginBottom: 5,
+        fontSize: 8,
+    },
+    sidebarSubTitle: {
+        fontSize: 9,
+        color: COLORS.white,
+        backgroundColor: COLORS.blueMain,
+        fontWeight: 'bold',
+        textTransform: 'uppercase',
+        marginBottom: 6,
+        marginTop: 4,
+        paddingHorizontal: 5,
+        paddingVertical: 2,
+        borderRadius: 2,
     },
     sidebarContent: {
         fontSize: 9.5,
@@ -183,7 +194,8 @@ const ResumeDocument = ({ personalInfo, experience, projects, education, soft_sk
                                 )
                             ))}
                             <Text style={styles.techTags}>
-                                Tecnologías: {exp.secrets ? exp.secrets.join(' • ') : ''}
+                                <Text style={styles.techLabel}>Tecnologías: </Text>
+                                {exp.secrets ? exp.secrets.join(' • ') : ''}
                             </Text>
                         </View>
                     ))}
@@ -205,10 +217,10 @@ const ResumeDocument = ({ personalInfo, experience, projects, education, soft_sk
                     <Text style={styles.sidebarContent}>React • Angular • TypeScript • RxJS</Text>
                     
                     <Text style={styles.sidebarSubTitle}>Backend & Data</Text>
-                    <Text style={styles.sidebarContent}>.NET Core • C# • Web API • SQL Server • PostgreSQL</Text>
+                    <Text style={styles.sidebarContent}>.NET Core • C# • Java • Spring Boot • SQL Server • PostgreSQL • CQRS</Text>
 
                     <Text style={styles.sidebarSubTitle}>Cloud & DevOps</Text>
-                    <Text style={styles.sidebarContent}>Azure DevOps • TFS • Docker • Git • Agile (Scrum) • IA</Text>
+                    <Text style={styles.sidebarContent}>Azure DevOps • TFS • Docker • Git • Agile (Scrum) • Agentes IA</Text>
 
                     <Text style={styles.sectionTitle}>{t.sections.soft_skills}</Text>
                     <Text style={styles.sidebarContent}>

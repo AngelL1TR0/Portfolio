@@ -162,10 +162,16 @@ const styles = StyleSheet.create({
         color: '#4a5568',
     },
     techStack: {
-        marginTop: 4,
-        fontSize: 7.3,
+        marginTop: 5,
+        fontSize: 7.5,
+        color: '#4a5568',
+        lineHeight: 1.3,
+    },
+    techLabel: {
         color: '#0056b3',
-        fontWeight: 700,
+        fontWeight: 'bold',
+        textTransform: 'uppercase',
+        fontSize: 7.2,
     },
     projectItem: {
         width: '100%',
@@ -189,12 +195,18 @@ const styles = StyleSheet.create({
         marginBottom: 4,
     },
     skillTitle: {
-        fontSize: 7.8,
-        color: '#0056b3',
+        fontSize: 7.5,
+        color: '#ffffff',
+        backgroundColor: '#0056b3',
         fontWeight: 'bold',
         textTransform: 'uppercase',
-        marginBottom: 3,
+        marginBottom: 4,
+        marginTop: 2,
+        paddingHorizontal: 4,
+        paddingVertical: 1,
+        borderRadius: 1,
         letterSpacing: 0.5,
+        alignSelf: 'flex-start',
     },
     skillItem: {
         fontSize: 8.0,
@@ -277,8 +289,8 @@ const ResumePDF = ({ lang = 'es' }) => {
     // Skill categorization logic [V4.0]
     const skillCategories = [
         { title: 'Frontend Stack', skills: ['React', 'Angular', 'TypeScript', 'RxJS'] },
-        { title: 'Backend & Data', skills: ['.NET Core', 'C#', 'Web API', 'SQL Server', 'PostgreSQL'] },
-        { title: 'Cloud & DevOps', skills: ['Azure DevOps', 'TFS', 'Docker', 'Git', 'Agile (Scrum)', 'IA'] },
+        { title: 'Backend & Data', skills: ['.NET Core', 'C#', 'Java', 'Spring Boot', 'SQL Server', 'PostgreSQL', 'CQRS'] },
+        { title: 'Cloud & DevOps', skills: ['Azure DevOps', 'TFS', 'Docker', 'Git', 'Agile (Scrum)', 'Agentes IA'] },
         { title: 'Architecture & Core', skills: ['Clean Architecture', 'Microservices', 'SOLID', 'Clean Code'] }
     ];
 
@@ -353,7 +365,10 @@ const ResumePDF = ({ lang = 'es' }) => {
                                             ))}
                                         </View>
 
-                                        <Text style={styles.techStack}>{t.labels.tech}: {(exp.secrets || []).join(' • ')}</Text>
+                                        <Text style={styles.techStack}>
+                                            <Text style={styles.techLabel}>{t.labels.tech}: </Text>
+                                            {(exp.secrets || []).join(' • ')}
+                                        </Text>
                                     </View>
                                 );
                             })}
@@ -375,7 +390,10 @@ const ResumePDF = ({ lang = 'es' }) => {
                                     <View key={i} style={styles.projectItem}>
                                         <Link src={proj.link} style={styles.itemTitle}>{proj.name}</Link>
                                         <Text style={styles.itemDesc}>{desc}</Text>
-                                        <Text style={[styles.techStack, { marginTop: 2 }]}>{(proj.tags || []).join(' • ')}</Text>
+                                        <Text style={[styles.techStack, { marginTop: 2 }]}>
+                                            <Text style={styles.techLabel}>{t.labels.tech}: </Text>
+                                            {(proj.tags || []).join(' • ')}
+                                        </Text>
                                     </View>
                                 );
                             })}

@@ -9,7 +9,7 @@ export const portfolioData = {
         },
         aboutShort: import.meta.env.VITE_BIO_SHORT || "> Diseñando el futuro a través de código limpio.",
         cvLink: "#",
-        skills: ["React", "Angular", "TypeScript", "C#", ".NET Core", "Web API", "SQL Server", "PostgreSQL", "Azure DevOps", "Docker", "TFS", "Git", "Agile", "IA", "Clean Architecture", "SOLID", "Microservices", "Clean Code"],
+        skills: ["React", "Angular", "TypeScript", "C#", ".NET Core", "Java", "Spring Boot", "Web API", "SQL Server", "PostgreSQL", "Azure DevOps", "Docker", "TFS", "Git", "Agile", "Agentes IA", "CQRS", "Clean Architecture", "SOLID", "Microservices", "Clean Code"],
         softSkills: ["Liderazgo Técnico", "Resolución de Problemas Críticos", "Visión de Negocio y Producto", "Metodologías Ágiles (Scrum/Kanban)", "Pensamiento Analítico", "Comunicación en Entornos Enterprise", "Optimización de Procesos", "Adaptabilidad Tecnológica"],
     },
 
@@ -52,8 +52,8 @@ export const portfolioData = {
                 lat: 40.3281,
                 lon: -3.7636
             },
-            description: "Arquitectura y desarrollo de soluciones Enterprise a medida. Implementación de microservicios robustos y sistemas escalables bajo estándares de Arquitectura Limpia y excelencia técnica.",
-            secrets: ["Microservicios", "Azure DevOps", "Arquitectura Limpia"]
+            description: "Liderazgo técnico en la arquitectura y desarrollo de soluciones Enterprise a medida. Implementación de microservicios robustos y sistemas altamente escalables bajo estándares de Arquitectura Limpia, optimizando flujos de trabajo en entornos distribuidos.",
+            secrets: ["Java", "Spring Boot", ".NET", "C#", "Angular", "SQL Server", "PostgreSQL", "TFS", "Azure DevOps", "Microservicios", "Arquitectura Limpia"]
         },
         {
             company: "Malthus Darwin",
@@ -64,8 +64,8 @@ export const portfolioData = {
                 lat: 40.3167,
                 lon: -3.7333
             },
-            description: "Ingeniería de software para gigantes del sector aeroespacial (T-SYSTEMS y AIRBUS). Liderazgo en migraciones críticas de sistemas legados y despliegue de protocolos de seguridad avanzados en entornos cloud-ready.",
-            secrets: [".NET", "Angular", "PostgreSQL", "TFS", "Clean Code", "Arquitectura Limpia", "C#"]
+            description: "Ingeniería de software de alta precisión para gigantes del sector aeroespacial (T-SYSTEMS y AIRBUS). Liderazgo en la migración crítica de sistemas legacy hacia arquitecturas modernas y despliegue de protocolos de seguridad avanzados en entornos cloud-ready.",
+            secrets: ["C#", ".NET", "Angular", "SQL Server", "PostgreSQL", "TFS", "Azure DevOps", "Clean Code", "Arquitectura Limpia"]
         },
         {
             company: "Sotec Consulting",
@@ -76,8 +76,8 @@ export const portfolioData = {
                 lat: 40.4236,
                 lon: -3.7157
             },
-            description: "Desarrollo de plataforma crítica de matriculación para la UNIVERSIDAD PONTIFICIA DE COMILLAS. Optimización de flujos transaccionales de alta disponibilidad para el sector universitario.",
-            secrets: ["Claude", "Angular", ".NET", "TFS", "SQL Server"]
+            description: "Desarrollo y optimización de plataforma crítica de matriculación para la UNIVERSIDAD PONTIFICIA DE COMILLAS. Implementación de arquitecturas CQRS, integración de agentes de IA y optimización de flujos transaccionales de alta disponibilidad para el sector universitario.",
+            secrets: ["C#", ".NET", "Angular", "SQL Server", "PostgreSQL", "TFS", "Azure DevOps", "Claude", "Agentes IA", "Estructura de negocio", "CQRS"]
         }
     ],
 

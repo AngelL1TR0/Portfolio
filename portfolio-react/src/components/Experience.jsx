@@ -44,7 +44,7 @@ function Experience() {
                                             {exp.period}
                                         </span>
                                     </div>
-                                    <p className="text-secondary mono small mb-3">
+                                    <p className="text-secondary mono mb-3">
                                         {exp.description}
                                     </p>
                                     <div className="d-flex flex-wrap gap-2">
