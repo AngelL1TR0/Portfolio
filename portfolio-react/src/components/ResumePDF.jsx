@@ -341,6 +341,7 @@ const ResumePDF = ({ lang = 'es' }) => {
                                     if (comp.includes('originpath')) desc = t.data.exp_originpath_desc;
                                     if (comp.includes('malthus')) desc = t.data.exp_malthus_desc;
                                     if (comp.includes('sotec')) desc = t.data.exp_sotec_desc;
+                                    if (comp.includes('txt')) desc = t.data.exp_txt_desc;
                                 }
 
                                 const period = exp.period.replace('Actualidad', t.labels.actualidad);

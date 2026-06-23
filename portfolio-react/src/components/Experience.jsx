@@ -25,7 +25,7 @@ function Experience() {
                             {experience.map((exp, i) => (
                                 <motion.div
                                     key={i}
-                                    className="exp-item"
+                                    className={`exp-item${exp.isCurrent ? ' current' : ''}`}
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}

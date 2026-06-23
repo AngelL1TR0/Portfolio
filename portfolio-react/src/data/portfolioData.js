@@ -78,6 +78,19 @@ export const portfolioData = {
             },
             description: "Desarrollo y optimización de plataforma crítica de matriculación para la UNIVERSIDAD PONTIFICIA DE COMILLAS. Implementación de arquitecturas CQRS, integración de agentes de IA y optimización de flujos transaccionales de alta disponibilidad para el sector universitario.",
             secrets: ["C#", ".NET", "Angular", "SQL Server", "PostgreSQL", "TFS", "Azure DevOps", "Claude", "Agentes IA", "Estructura de negocio", "CQRS"]
+        },
+        {
+            company: "TXT Logistics",
+            role: "Arquitecto de Software",
+            period: "Jun 2026 - Presente",
+            location: {
+                label: "Getafe, Madrid (España)",
+                lat: 40.3057,
+                lon: -3.7326
+            },
+            description: "Dirección y diseño de la arquitectura software en proyectos estratégicos. Liderazgo técnico de equipos multidisciplinares, estableciendo principios de Clean Architecture, escalabilidad y calidad. Implementación de soluciones .NET y Angular de alto rendimiento, fomentando la innovación y la solvencia creativa en la resolución de problemas complejos.",
+            secrets: [".NET", "C#", "Angular", "Arquitectura de software", "Clean Architecture", "Liderazgo técnico", "Solvencia creativa"],
+            isCurrent: true
         }
     ],
 
